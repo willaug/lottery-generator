@@ -1,15 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './Display.css';
 
-export default function Display() {
-  return (
-    <div className="display">
-      <div className="display_value">10</div>
-      <div className="display_value">55</div>
-      <div className="display_value">04</div>
-      <div className="display_value">22</div>
-      <div className="display_value">03</div>
-      <div className="display_value">32</div>
-    </div>
-  );
+export default class Display extends React.PureComponent {
+  render() {
+    const { amountNumbers } = this.props;
+    const values = amountNumbers
+      .map((number) => (<div key={number} className="display_value">{number}</div>));
+
+    return (
+      <div className="display">
+        {values}
+      </div>
+    );
+  }
 }
+
+Display.propTypes = {
+  amountNumbers: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])).isRequired,
+};

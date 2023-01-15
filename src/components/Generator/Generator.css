@@ -32,6 +32,12 @@
   font-size: 18px;
   color: #707070;
   font-weight: 500;
+  transition: 250ms;
   border-radius: 12px;
   background: #171a25;
+}
+
+.generator .generator_button:disabled {
+  cursor: not-allowed;
+  background: #222636;
 }
