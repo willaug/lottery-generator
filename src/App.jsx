@@ -12,10 +12,12 @@ class App extends React.Component {
   }
 
   setAmountNumbers = (amount) => {
-    console.log(amount);
-    this.setState({
-      amountNumbers: [10, 15, 23, 30],
-    });
+    const amountNumbers = Array(amount)
+      .fill(0)
+      .map(() => Math.floor(Math.random() * 60) + 1)
+      .sort((current, toCompare) => current - toCompare);
+
+    this.setState({ amountNumbers });
   };
 
   render() {

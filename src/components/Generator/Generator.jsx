@@ -13,7 +13,7 @@ export default class Generator extends React.PureComponent {
   changeAmountNumbers = () => {
     const { setAmountNumbers } = this.props;
     const { amountNumbers } = this.state;
-    setAmountNumbers(amountNumbers);
+    setAmountNumbers(Number(amountNumbers));
   };
 
   render() {
